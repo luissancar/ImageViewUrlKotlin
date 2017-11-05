@@ -21,20 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         button.setOnClickListener { pulsar() }
    }
-    fun getBitmapFromURL(imgUrl: String): Bitmap? {
-        try {
-            val url = URL(imgUrl)
-            val connection = url.openConnection() as HttpURLConnection
-            connection.setDoInput(true)
-            connection.connect()
-            val input = connection.getInputStream()
-            return BitmapFactory.decodeStream(input)
-        } catch (e: IOException) {
-            // Log exception
-            return null
-        }
 
-    }
 
     fun pulsar() {
         imageView.loadUrl("https://lh6.googleusercontent.com/-Ew2vNI6UA0g/AAAAAAAAAAI/AAAAAAAAAIM/ScssuBTSU5M/photo.jpg?sz=32")
